@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>112 Training — Тестирование операторов</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="card">
+      <div class="brand-row">
+        <div>
+          <div class="eyebrow">112 TRAINING</div>
+          <h1>Мобильное тестирование</h1>
+        </div>
+        <div class="shield">✓</div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span>Готовность</span>
+          <span id="progressText">0%</span>
+        </div>
+        <div class="progress-bar"><div id="progressBar"></div></div>
+      </div>
+
+      <section id="loginScreen">
+        <div class="panel soft">
+          <div class="panel-title">Вход оператора</div>
+          <p class="muted">Перед началом теста введите ФИО и номер оператора.</p>
+
+          <label>ФИО
+            <input id="fullName" type="text" placeholder="Например: Содиков Расул" />
+          </label>
+
+          <label>Номер оператора
+            <input id="operatorId" type="text" placeholder="Например: 555" />
+          </label>
+
+          <button id="startBtn" class="primary">Начать тест</button>
+        </div>
+
+        <div class="grid-info">
+          <div class="info-box"><span>Формат</span><strong>Микротест</strong></div>
+          <div class="info-box"><span>Время</span><strong>3–5 мин</strong></div>
+          <div class="info-box"><span>Запуск</span><strong>Без Node.js</strong></div>
+        </div>
+      </section>
+
+      <section id="testScreen" class="hidden">
+        <div class="panel dark">
+          <div class="operator-box">
+            <div>
+              <div class="mini-label">ОПЕРАТОР</div>
+              <div id="operatorNameView" class="operator-name"></div>
+              <div id="operatorIdView" class="operator-id"></div>
+            </div>
+            <button id="restartBtnTop" class="icon-btn">↺</button>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-head">
+            <span id="questionCategory" class="badge"></span>
+            <span id="questionCount" class="question-count"></span>
+          </div>
+          <h2 id="questionText"></h2>
+        </div>
+
+        <div id="answersList" class="answers"></div>
+
+        <div id="confirmBox" class="panel soft hidden">
+          <div class="panel-title">Подтверждение ответа</div>
+          <p class="muted">Вы выбрали:</p>
+          <div id="selectedAnswerView" class="selected-answer"></div>
+          <div class="confirm-actions">
+            <button id="changeBtn" class="secondary">Изменить</button>
+            <button id="confirmBtn" class="primary">Подтвердить</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultScreen" class="hidden">
+        <div class="panel result">
+          <div class="panel-title">Результат теста</div>
+          <div id="scoreView" class="score"></div>
+          <p id="summaryText" class="muted"></p>
+        </div>
+
+        <div id="detailsList" class="details-list"></div>
+
+        <div class="panel soft">
+          <div class="panel-title">Telegram</div>
+          <p class="muted">
+            В этой простой офлайн-версии Telegram не подключён. Для автоматической отправки результатов нужна серверная версия.
+          </p>
+        </div>
+
+        <button id="restartBtnBottom" class="primary full">Пройти заново</button>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
